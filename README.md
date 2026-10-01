@@ -9,4 +9,12 @@
     └── .gitkeep
 
 
-    
+  ### Analysis base don 5 traits VS Hourly Wage
+Research question: Are Big Five traits associated with hourly wages?
+
+Outcome: Log hourly wage.
+
+Predictors: Five standardized personality scores.
+
+Main finding: Agreeableness has a small positive association; the other traits do not.
+  
