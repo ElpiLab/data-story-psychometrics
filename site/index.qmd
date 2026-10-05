@@ -1,0 +1,6 @@
+---
+title: "The Paycheck Personality"
+description: "An interactive data story about personality and income."
+---
+
+{{< include _body.qmd >}}

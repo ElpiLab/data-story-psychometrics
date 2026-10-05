@@ -1,0 +1,23 @@
+project:
+  type: website
+  output-dir: ../docs
+  render:
+    - index.qmd
+  resources:
+    - data.js
+    - styles.css
+
+website:
+  title: "The Paycheck Personality"
+  navbar: false
+
+format:
+  html:
+    theme: none
+    css: styles.css
+    toc: false
+    page-layout: full
+    include-in-header: header.html
+
+execute:
+  freeze: auto

@@ -1,0 +1,113 @@
+<nav class="topbar" aria-label="Story navigation">
+  <a class="brand" href="#top" style="color:inherit;text-decoration:none">Paycheck / Personality</a>
+  <div class="nav"><a href="#traits">Traits</a><a href="#tree">TREE</a><a href="#controls">Controls</a><a href="#sources">Sources</a></div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <div class="eyebrow">A data story · Swiss TREE + synthetic comparison</div>
+    <h1>The Paycheck Personality</h1>
+    <p>In a strategy game, you choose traits to help your character win. Real life gives you no reset button. So how much do personality traits matter for your career and paycheck?</p>
+    <div class="prompt">Scroll to explore the evidence ↓</div>
+    <a class="hero-link" href="#traits">Start the story</a>
+  </div>
+</header>
+
+<div class="story-sections">
+<section id="traits">
+  <div class="wrap">
+    <div class="section-tag">01 / The character sheet</div>
+    <h2>Five dimensions. No user manual.</h2>
+    <p class="lede">Psychologists use the Big Five to describe broad patterns in how people think, feel, and behave. The OCEAN traits are measured on spectrums; a score is not a fixed label or a complete description of a person.</p>
+    <div class="trait-grid">
+      <article class="trait"><b>O · Openness</b><p>Curiosity, imagination, and interest in new ideas and experiences.</p></article>
+      <article class="trait"><b>C · Conscientiousness</b><p>Organization, dependability, and focus on longer-term goals.</p></article>
+      <article class="trait"><b>E · Extraversion</b><p>Sociability, assertiveness, and energy in social settings.</p></article>
+      <article class="trait"><b>A · Agreeableness</b><p>Cooperation, trust, empathy, and concern for interpersonal harmony.</p></article>
+      <article class="trait"><b>N · Neuroticism</b><p>Emotional reactivity and vulnerability to stress and negative emotions.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="tree">
+  <div class="wrap">
+    <div class="section-tag">02 / The Swiss reality</div>
+    <h2>At career entry, the signals are small.</h2>
+    <p class="lede">The TREE study follows young people in Switzerland as they move from education into working life. The chart shows each trait’s raw Pearson correlation with log monthly wage. Each bar uses available cases for that trait and wage.</p>
+    <div class="stats">
+      <div class="stat"><div class="number" id="tree-n">—</div><div class="label">TREE participants included in this analysis</div></div>
+      <div class="stat"><div class="number" id="tree-complete">—</div><div class="label">Complete cases for all five traits and wage</div></div>
+      <div class="stat"><div class="number" id="tree-median">—</div><div class="label">Median monthly wage in the complete-case analysis</div></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title"><h3>Personality and log monthly wage</h3><span>REAL SURVEY · PEARSON r · APPROX. 95% CI</span></div>
+      <div id="tree-chart" class="chart" role="img" aria-label="Bar chart of TREE trait correlations with log monthly wage"></div>
+    </div>
+    <div id="tree-table" class="table-wrap"></div>
+    <div class="note"><strong>Reading this chart:</strong> the estimates are mostly close to zero. Extraversion has the clearest negative association in this file (about −0.10), a small relationship in size. It would be inaccurate to say the data show no association at all. Correlation alone does not establish cause.</div>
+    <p class="prose">Two measurement details may weaken the observed link. TREE measured personality around ages 15–16, several years before many participants entered work. Personality can change during that interval, which adds noise to the measure. Also, entry-level wages in some Swiss occupations follow established pay scales, leaving less room for individual differences to appear in starting pay.</p>
+  </div>
+</section>
+
+<section id="controls">
+  <div class="wrap">
+    <div class="section-tag">03 / What else is in the model?</div>
+    <span class="dataset-pill">Synthetic dataset · not observed people</span>
+    <h2>A paycheck has more than one input.</h2>
+    <p class="lede">Personality may relate to income through education, opportunity, performance, and workplace behavior. Choose a control set to see how the synthetic dataset’s standardized Big Five coefficients change as the model adds variables.</p>
+    <div class="chart-card">
+      <div class="control-row"><label for="model-select">Model controls</label><select id="model-select" aria-label="Select regression control set"></select><span id="model-n" class="source-note"></span></div>
+      <div class="chart-title"><h3>Big Five coefficients for log income</h3><span>STANDARDIZED OLS · HC3 INTERVALS</span></div>
+      <div id="kaggle-chart" class="chart" role="img" aria-label="Interactive coefficient chart for synthetic income regression"></div>
+      <div id="model-table" class="table-wrap"></div>
+    </div>
+    <div class="note"><strong>Keep the source in view:</strong> these data are synthetic. The patterns illustrate how estimates can move when controls enter a model; they are not evidence that the same effects occur in a real population.</div>
+    <p class="prose">The model controls include age, education years, parental socioeconomic status, cognitive score, GPA, job performance, and sex where available. The chart compares trait coefficients from models fitted to the Kaggle file. It is a modeling demonstration, not a salary calculator.</p>
+  </div>
+</section>
+
+<section id="takeaway">
+  <div class="wrap">
+    <div class="section-tag">04 / The takeaway</div>
+    <h2>Personality is one part of a much larger story.</h2>
+    <p class="lede">A weak association at career entry does not mean personality never matters. It means the TREE measures, population, outcome, and timing constrain what this comparison can show. The synthetic dataset makes different assumptions and should be read as an illustration.</p>
+    <p class="prose">The effect of a trait can also depend on the work: openness may matter differently in a creative role than in a tightly standardized one. Income reflects institutions, skills, choices, opportunity, and negotiation alongside personality. No single trait guarantees a particular paycheck.</p>
+  </div>
+</section>
+</div>
+
+<footer class="foot" id="sources">
+  <div class="wrap">
+    <div class="section-tag">Sources & acknowledgements</div>
+    <h2>Read further</h2>
+    <p>Special thanks to the University of Bern and Sandra Hupka-Brunner for access to the TREE study data.</p>
+    <a href="https://www.tree.unibe.ch/index_eng.html">TREE study · University of Bern</a>
+    <a href="https://www.kaggle.com/datasets/sergionefedov/big-five-personality-and-life-outcomes">Synthetic Kaggle dataset</a>
+    <a href="https://doi.org/10.1016/j.joep.2004.07.001">Nyhus & Pons (2005), The effects of personality on earnings</a>
+    <a href="https://doi.org/10.1111/boer.12437">Vella (2024), Big Five traits and earnings: a meta-analysis</a>
+    <a href="https://doi.org/10.1111/jopy.12683">Zell & Lesick (2022), Big Five traits and performance</a>
+    <p class="source-note">Analysis uses the canonical files in dataset/TreeData and dataset/Kaggle_BigFive_USA. Pearson correlations use pairwise complete rows; regression estimates use complete cases for each model.</p>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script>
+const palette = { ink: '#172826', muted: '#5f706d', green: '#215d50', coral: '#d96f50', paper: '#fffefa', line: '#d8ded5' };
+const baseLayout = { paper_bgcolor: palette.paper, plot_bgcolor: palette.paper, font: { family: 'DM Sans, sans-serif', color: palette.ink }, margin: { l: 56, r: 20, t: 15, b: 76 }, xaxis: { tickangle: -18, automargin: true, gridcolor: '#edf0e9' }, yaxis: { zeroline: true, zerolinecolor: palette.ink, gridcolor: '#edf0e9' }, showlegend: false };
+document.getElementById('tree-n').textContent = STORY_DATA.tree.n.toLocaleString();
+document.getElementById('tree-complete').textContent = STORY_DATA.tree.complete_n.toLocaleString();
+document.getElementById('tree-median').textContent = 'CHF ' + STORY_DATA.tree.median_monthly.toLocaleString(undefined, { maximumFractionDigits: 0 });
+Plotly.newPlot('tree-chart', [{ type: 'bar', x: STORY_DATA.tree.correlations.map(d => d.trait), y: STORY_DATA.tree.correlations.map(d => d.r), marker: { color: STORY_DATA.tree.correlations.map(d => d.r >= 0 ? palette.green : palette.coral) }, error_y: { type: 'data', array: STORY_DATA.tree.correlations.map(d => d.ci), visible: true, color: palette.muted }, customdata: STORY_DATA.tree.correlations.map(d => [d.p, d.n]), hovertemplate: '<b>%{x}</b><br>Pearson r: %{y:.3f}<br>p-value: %{customdata[0]:.3g}<br>n: %{customdata[1]}<extra></extra>' }], { ...baseLayout, yaxis: { ...baseLayout.yaxis, title: 'Pearson r with log monthly wage' } }, { responsive: true, displayModeBar: false });
+document.getElementById('tree-table').innerHTML = '<table><thead><tr><th>Trait</th><th>Pearson r</th><th>p-value</th><th>n</th></tr></thead><tbody>' + STORY_DATA.tree.correlations.map(d => `<tr><td>${d.trait}</td><td>${d.r.toFixed(3)}</td><td>${d.p < .001 ? '&lt; .001' : d.p.toFixed(3)}</td><td>${d.n.toLocaleString()}</td></tr>`).join('') + '</tbody></table>';
+const select = document.getElementById('model-select');
+Object.entries(STORY_DATA.models).forEach(([key, model]) => { const option = document.createElement('option'); option.value = key; option.textContent = model.label; select.appendChild(option); });
+function showModel(key) {
+  const model = STORY_DATA.models[key];
+  const data = [{ type: 'bar', x: model.rows.map(d => d.trait), y: model.rows.map(d => d.beta), marker: { color: model.rows.map(d => d.beta >= 0 ? palette.green : palette.coral) }, error_y: { type: 'data', array: model.rows.map(d => 1.96 * d.se), visible: true, color: palette.muted }, customdata: model.rows.map(d => [d.p]), hovertemplate: '<b>%{x}</b><br>Standardized beta: %{y:.3f}<br>95% CI half-width: %{error_y.array:.3f}<br>p-value: %{customdata[0]:.3g}<extra></extra>' }];
+  Plotly.react('kaggle-chart', data, { ...baseLayout, yaxis: { ...baseLayout.yaxis, title: 'Standardized coefficient (95% CI)' } }, { responsive: true, displayModeBar: false });
+  document.getElementById('model-n').textContent = model.n.toLocaleString() + ' rows · ' + model.controls_label;
+  document.getElementById('model-table').innerHTML = '<table><thead><tr><th>Trait</th><th>Std. beta</th><th>95% CI</th><th>p-value</th></tr></thead><tbody>' + model.rows.map(d => `<tr><td>${d.trait}</td><td>${d.beta.toFixed(3)}</td><td>${(d.beta-1.96*d.se).toFixed(3)} to ${(d.beta+1.96*d.se).toFixed(3)}</td><td>${d.p < .001 ? '&lt; .001' : d.p.toFixed(3)}</td></tr>`).join('') + '</tbody></table>';
+}
+select.addEventListener('change', () => showModel(select.value));
+showModel(select.value);
+</script>
