@@ -1,0 +1,24 @@
+column,type,description
+person_id,string,Unique person id
+age,int,Age in years
+sex,string,M / F
+openness,float,Big Five: Openness to Experience (0-100)
+conscientiousness,float,Big Five: Conscientiousness (0-100) — the strongest life-outcome predictor
+extraversion,float,Big Five: Extraversion (0-100)
+agreeableness,float,Big Five: Agreeableness (0-100)
+neuroticism,float,Big Five: Neuroticism (0-100)
+parental_ses,float,Parental socioeconomic status composite (0-100) — a key CONFOUNDER
+parental_education_years,int,Years of education of parents
+cognitive_score,int,"Cognitive ability score (mean 100, sd 15) — another confounder"
+education_years,int,Years of education attained
+has_degree,int,1 if attained a degree (16+ years)
+gpa,float,Academic GPA (0-4)
+job_performance,float,Supervisor-rated job performance (1-5)
+income_usd,float,Annual income (USD)
+high_income,int,TARGET: 1 if income in the top quartile
+life_satisfaction,float,Life satisfaction (1-10)
+exercise_days_week,int,Days per week exercising
+smoker,int,1 if a smoker
+self_rated_health,float,Self-rated health (1-5)
+partnered,int,1 if in a committed relationship
+ever_divorced,int,1 if ever divorced (0 for under-28s)

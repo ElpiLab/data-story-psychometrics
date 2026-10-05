@@ -1,6 +1,10 @@
-streamlit
 pandas
 numpy
-plotly
-scikit-learn
 scipy
+statsmodels
+streamlit
+plotly
+matplotlib
+seaborn
+openpyxl
+pytest

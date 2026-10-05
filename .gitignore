@@ -216,3 +216,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local analysis and Python artifacts
+output/
+*.pyc
+__pycache__/
+.venv/
+.DS_Store
+.quarto/

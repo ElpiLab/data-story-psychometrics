@@ -1,0 +1,167 @@
+Story Intro 
+
+When you start a classic strategy game, the first thing you do is build your character. You spend an hour tweaking your character's jawline, hairstyle, and armor until they look exactly how you want. Then comes the second phase: assigning your baseline stats and personality traits. 
+
+ 
+
+If you want your character to succeed, you choose traits very strategically. You might make them highly persuasive so they can negotiate better rewards, or ultra-competitive so they can dominate their rivals. You don't pick traits that match who you actually are in real life; you pick the exact combination that helps your character win. And if things go wrong, you can always reset the game and try a different strategy. 
+
+ 
+
+Now, imagine playing that exact same game—except it’s your real life. You didn't get to choose your starting traits, you can't reset the board, and the stakes are your actual career and paycheck. 
+
+ 
+
+What traits would you choose to succeed in the game of professional life—and, more importantly, can you even change them? 
+
+ 
+
+What Is Personality? 
+
+The question you are probably asking yourself right now is: how can something as abstract and invisible as personality actually be measured? After all, humans don’t come with a user manual where you can simply look up someone’s personality traits the way you would check the horsepower of a new car. 
+
+ 
+
+So, rather than inventing a test out of thin air, psychologists trying to map human personality turned to an unexpected source: the dictionary. Under a simple idea known as the "Lexical Hypothesis," researchers in the 1930s reasoned that if a human trait actually matters, society will eventually invent a word for it. 
+
+ 
+
+What followed was a massive linguistic sift. Scientists dragged 18,000 descriptive words out of the English language, stripped away temporary moods and obscure slang, and had thousands of people rate themselves and their peers. Then came the heavy lifting. Using pattern-recognition statistics—a technique called factor analysis—researchers let algorithms crunch the sheer volume of responses, hunting for words that naturally clumped together. If someone was "reliable," they were almost always "punctual" and "thorough" as well. 
+
+ 
+
+When the mathematical dust settled, thousands of overlapping adjectives dissolved into just five bedrock spectrums: Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism (OCEAN). Together, these five dimensions form the universal engine driving how we think, feel, and move through the world. 
+
+ 
+
+Openness to Experience: Openness measures a person's desire for novelty, intellectual challenge, and exploration. Those who score high on this spectrum thrive on abstract ideas, artistic expression, and the unfamiliar. At the other end, individuals low in openness anchor themselves in the known, relying on proven routines, concrete facts, and predictable environments. 
+
+ 
+
+Conscientiousness: Conscientiousness reflects discipline, organization, and goal-directed focus. Highly conscientious individuals operate as natural planners—dependable, detail-oriented, and long-term thinkers. Those lower on the scale adopt a more adaptable, spontaneous outlook, navigating life with fewer routines and a high tolerance for ambiguity or messiness. 
+
+ 
+
+Extraversion: Probably the most commonly used term out of all the Big Five. High extraversion translates to an outward pull—an intrinsic desire for social connection and the ability to act on this desire. Lower extraversion (introversion) steers individuals inward toward quiet, low-stimulation spaces where time spent alone is highly valued. 
+
+ 
+
+Agreeableness: Agreeableness measures a person's orientation toward interpersonal harmony, empathy, and cooperation. High agreeableness drives warmth, trust, and a desire to help others. Lower agreeableness manifests as skepticism, competitiveness, and a willingness to engage in conflict to achieve personal goals. 
+
+ 
+
+Neuroticism (Emotional Instability): Neuroticism measures emotional reactivity and vulnerability to negative emotions like anxiety, anger, and mood swings. High neuroticism means experiencing stress more intensely and reacting strongly to challenges. Lower neuroticism (high emotional stability) represents resilience, calm under pressure, and emotional steadiness. 
+
+ 
+
+So now that you know what personality is, it should be pretty easy to answer our question: just let some people take a personality test and ask them for their income. 
+
+ 
+
+This dataset assessed personality and salary during career entry in Switzerland: 
+
+ 
+
+Short Summary of What Can Be Seen on the Screen: 
+
+Tree Dataset 
+
+ 
+
+So, as we see, there is no connection whatsoever between personality and salary. Or is there? 
+
+ 
+
+If personality measurements are based on adjectives that describe a person—which often directly describe how a person behaves—we would have to believe that no matter how a person consistently behaves, salary is not affected. If a person is consistently angry and easily provoked, we would have to believe that this person has the exact same chance of career success as someone who is nice and forthcoming. 
+
+ 
+
+Of course not. But the methodological approach plays a big role: it isn't enough to simply take two measures and compare them—we have to be more sophisticated. 
+
+ 
+
+Why Did This Specific Dataset Yield No Significant Results? 
+
+Fixed Salary Frameworks: In Switzerland, starter salaries for young adults entering the workforce after vocational training or a degree are tightly regulated by collective labor agreements, industry benchmarks, and fixed salary scales. Because entry-level pay is so standardized, young workers have very little room to negotiate their salaries early in their careers. As a result, personal traits like extraversion or conscientiousness have almost no direct impact on how much money someone makes when they first enter the job market. 
+
+ 
+
+Time Lag and Maturation: Personality traits were measured when participants were 15–16 years old, right at the end of compulsory school. However, several years passed between this initial assessment and when participants actually entered the workforce. Because personality continues to mature and evolve during young adulthood, measuring it years in advance introduces statistical noise (known as attenuation bias). This noise naturally weakens the link between early personality traits and later work outcomes, pushing the estimated effects closer to zero. 
+
+ 
+
+For a more accurate understanding of personality and its effect on salary, here is a second synthetic dataset. "Synthetic" means that it does not show actual raw data, but rather an artificial representation of mainstream psychometric analysis. 
+
+ 
+
+Try to see what happens when you add different variables like GPA (grades) or cognitive scores. 
+
+ 
+
+Kaggle Dataset 
+
+ 
+
+Personality works in tandem with multiple other variables, which must be taken into account when measuring outcomes like salary based on the Big Five. 
+
+ 
+
+Personality influences your paycheck not through a direct financial reward for who you are, but by driving a continuous loop of daily behaviors, strategic choices, and interpersonal dynamics that compound over time. At its core, the mechanism operates through workplace behavior and negotiation strategy: personality traits dictate how comfortable you are claiming value, taking professional risks, and managing workplace stress. 
+
+ 
+
+It is also important to note that the effect of personality on salary highly depends on your job. If someone works in a creative industry, openness is much more important than it is for someone who works in a non-creative industry. Still, some tendencies seem to be almost universal in their effect: 
+
+ 
+
+Openness to Experience: Has a minor and mixed direct impact on pay. While high openness drives skill accumulation and adaptability, it can hurt long-term salary growth if it manifests as workplace restlessness, leading to frequent job changes before compounding financial gains at one company. 
+
+ 
+
+Conscientiousness: Acts as the most universal driver of higher pay. Higher organization, dependability, and follow-through mean fewer costly mistakes, higher performance metrics, and a track record that consistently commands raises, bonuses, and promotions. 
+
+ 
+
+Extraversion: Boosts earnings through social assertiveness and visibility. Higher extraversion leads to stronger internal networking, faster identification for advancement, and a willingness to self-advocate, ensuring your achievements are noticed by decision-makers. 
+
+ 
+
+Agreeableness: Functions as a direct financial tax. High agreeableness lowers salary because a desire for harmony makes individuals far less likely to negotiate starting pay, ask for raises, or push back in salary disputes. Conversely, low agreeableness creates a distinct "disagreeableness premium." 
+
+ 
+
+Neuroticism (Emotional Instability): Imposes an income penalty by increasing vulnerability to stress, burnout, and interpersonal friction. High emotional stability (low neuroticism) allows individuals to maintain performance during high-stakes pressure and take the risks necessary to capture higher financial upside. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Special thanks to the university of Bern and especially Sandra Hupka-Brunner for giving us access to the TREE study Data set. 
+
+You can find out more about the Tree Study at:  https://www.tree.unibe.ch/index_eng.html 
+
+ 
+
+Synthetic Dataset as used in article: 
+
+https://www.kaggle.com/datasets/sergionefedov/big-five-personality-and-life-outcomes 
+
+Dataset may have been subject to changes. 
+
+ 
+
+Sources used in the article. For further Reading and anyone interested: 
+
+Nyhus, E. K. & Pons, E. (2005). The effects of personality on earnings (Tilburg Symposium on Psychology and Economics: Games and Decisions). Journal of Economic Psychology, 26(3), 363–384. https://doi.org/10.1016/j.joep.2004.07.001 
+
+Vella, M. (2024). The relationship between the Big Five personality traits and earnings: Evidence from a meta-analysis. Bulletin of Economic Research, 76(3), 685–712. https://doi.org/10.1111/boer.12437 
+
+Zell, E. & Lesick, T. L. (2022). Big five personality traits and performance: A quantitative synthesis of 50+ meta-analyses. Journal of Personality, 90(4), 559–573. https://doi.org/10.1111/jopy.12683 
+
+ 
