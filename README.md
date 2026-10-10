@@ -70,4 +70,4 @@ Open `docs/index.html` in a browser to preview it. To render through Quarto, ins
 quarto render site
 ```
 
-To publish with GitHub Pages, push the repository and select **Settings → Pages → Deploy from a branch → `main` → `/docs`**. The static page uses precomputed regression results; it does not run Python in visitors' browsers.
+To publish with GitHub Pages, push the repository and select **Settings → Pages → Source: GitHub Actions**. The static page uses precomputed regression results; it does not run Python in visitors' browsers.
