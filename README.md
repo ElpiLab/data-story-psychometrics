@@ -64,4 +64,4 @@ The source template remains in `site/` for future Quarto use. To render through 
 quarto render site
 ```
 
-To publish with GitHub Pages, push the repository and select **Settings → Pages → Deploy from a branch → `main` → `/docs`**. The static page uses precomputed regression results; it does not run Python in visitors' browsers.
+To publish with GitHub Pages, push the repository and select **Settings → Pages → Source: GitHub Actions**. The static page uses precomputed regression results; it does not run Python in visitors' browsers.
