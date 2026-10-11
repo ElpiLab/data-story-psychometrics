@@ -1,6 +1,6 @@
 <nav class="topbar" aria-label="Story navigation">
   <a class="brand" href="#top" style="color:inherit;text-decoration:none">Paycheck / Personality</a>
-  <div class="nav"><a href="#article">Article</a><a href="#evidence">Evidence</a><a href="#sources">Sources</a></div>
+  <div class="nav"><a href="#article">Article</a><a href="#sources">Sources</a></div>
 </nav>
 
 <header class="hero" id="top">
@@ -19,35 +19,11 @@
   </div>
 </section>
 
-<section id="evidence">
-  <div class="wrap">
-    <div class="section-tag">Interactive evidence</div>
-    <h2>The datasets behind the story</h2>
-    <p class="lede">These charts use the canonical TREE and synthetic Kaggle files in this repository. The synthetic dataset is clearly labeled because it is an illustration rather than observed population data.</p>
-    <div class="stats">
-      <div class="stat"><div class="number" id="tree-n">—</div><div class="label">TREE participants included in the complete-case analysis</div></div>
-      <div class="stat"><div class="number" id="tree-complete">—</div><div class="label">Complete cases for all five traits and wage</div></div>
-      <div class="stat"><div class="number" id="tree-median">—</div><div class="label">Median monthly wage in the complete-case analysis</div></div>
-    </div>
-    <div class="chart-card">
-      <div class="chart-title"><h3>TREE: personality and log monthly wage</h3><span>REAL SURVEY · PEARSON r · APPROX. 95% CI</span></div>
-      <div id="tree-chart" class="chart" role="img" aria-label="Bar chart of TREE trait correlations with log monthly wage"></div>
-      <div id="tree-table" class="table-wrap"></div>
-    </div>
-    <div class="chart-card">
-      <div class="control-row"><label for="model-select">Synthetic model controls</label><select id="model-select" aria-label="Select regression control set"></select><span id="model-n" class="source-note"></span></div>
-      <div class="chart-title"><h3>Kaggle: Big Five coefficients for log income</h3><span>SYNTHETIC DATA · STANDARDIZED OLS · HC3 INTERVALS</span></div>
-      <div id="kaggle-chart" class="chart" role="img" aria-label="Interactive coefficient chart for synthetic income regression"></div>
-      <div id="model-table" class="table-wrap"></div>
-    </div>
-  </div>
-</section>
 </main>
 
 <footer class="foot" id="sources">
   <div class="wrap">
-    <div class="section-tag">Sources & acknowledgements</div>
-    <p class="source-note">The article text above is provided by the project team. Analysis uses the canonical files in dataset/TreeData and dataset/Kaggle_BigFive_USA.</p>
+    <p class="source-note">The article text was provided by the project team. The analysis uses the canonical TREE and synthetic comparison datasets included with this project.</p>
   </div>
 </footer>
 
@@ -55,18 +31,19 @@
 <script>
 const palette = { ink: '#172826', muted: '#5f706d', green: '#215d50', coral: '#d96f50', paper: '#fffefa' };
 const baseLayout = { paper_bgcolor: palette.paper, plot_bgcolor: palette.paper, font: { family: 'DM Sans, sans-serif', color: palette.ink }, margin: { l: 56, r: 20, t: 15, b: 76 }, xaxis: { tickangle: -18, automargin: true, gridcolor: '#edf0e9' }, yaxis: { zeroline: true, zerolinecolor: palette.ink, gridcolor: '#edf0e9' }, showlegend: false };
-document.getElementById('tree-n').textContent = STORY_DATA.tree.n.toLocaleString();
-document.getElementById('tree-complete').textContent = STORY_DATA.tree.complete_n.toLocaleString();
-document.getElementById('tree-median').textContent = 'CHF ' + STORY_DATA.tree.median_monthly.toLocaleString(undefined, { maximumFractionDigits: 0 });
-Plotly.newPlot('tree-chart', [{ type: 'bar', x: STORY_DATA.tree.correlations.map(d => d.trait), y: STORY_DATA.tree.correlations.map(d => d.r), marker: { color: STORY_DATA.tree.correlations.map(d => d.r >= 0 ? palette.green : palette.coral) }, error_y: { type: 'data', array: STORY_DATA.tree.correlations.map(d => d.ci), visible: true, color: palette.muted }, customdata: STORY_DATA.tree.correlations.map(d => [d.p, d.n]), hovertemplate: '<b>%{x}</b><br>Pearson r: %{y:.3f}<br>p-value: %{customdata[0]:.3g}<br>n: %{customdata[1]}<extra></extra>' }], { ...baseLayout, yaxis: { ...baseLayout.yaxis, title: 'Pearson r with log monthly wage' } }, { responsive: true, displayModeBar: false });
-document.getElementById('tree-table').innerHTML = '<table><thead><tr><th>Trait</th><th>Pearson r</th><th>p-value</th><th>n</th></tr></thead><tbody>' + STORY_DATA.tree.correlations.map(d => `<tr><td>${d.trait}</td><td>${d.r.toFixed(3)}</td><td>${d.p < .001 ? '&lt; .001' : d.p.toFixed(3)}</td><td>${d.n.toLocaleString()}</td></tr>`).join('') + '</tbody></table>';
-const select = document.getElementById('model-select');
+document.getElementById('overview-people').textContent = STORY_DATA.tree.n.toLocaleString();
+document.getElementById('overview-episodes').textContent = STORY_DATA.tree.complete_n.toLocaleString();
+document.getElementById('overview-wage').textContent = STORY_DATA.tree.median_hourly.toLocaleString(undefined, { maximumFractionDigits: 0 });
+Plotly.newPlot('overview-wage-chart', [{ type: 'bar', x: STORY_DATA.tree.wage_histogram.map(d => d.bin), y: STORY_DATA.tree.wage_histogram.map(d => d.count), marker: { color: palette.green }, hovertemplate: 'CHF %{x} / h<br>%{y} employment episodes<extra></extra>' }], { ...baseLayout, height: 330, margin: { ...baseLayout.margin, b: 92 }, xaxis: { ...baseLayout.xaxis, title: 'Hourly wage range (CHF / h)', tickangle: -35 }, yaxis: { ...baseLayout.yaxis, title: 'Employment episodes' } }, { responsive: true, displayModeBar: false });
+Plotly.newPlot('tree-inline-chart', [{ type: 'bar', x: STORY_DATA.tree.correlations.map(d => d.trait), y: STORY_DATA.tree.correlations.map(d => d.r), marker: { color: STORY_DATA.tree.correlations.map(d => d.r >= 0 ? palette.green : palette.coral) }, error_y: { type: 'data', array: STORY_DATA.tree.correlations.map(d => d.ci), visible: true, color: palette.muted }, customdata: STORY_DATA.tree.correlations.map(d => [d.p, d.n]), hovertemplate: '<b>%{x}</b><br>Pearson r: %{y:.3f}<br>p-value: %{customdata[0]:.3g}<br>n: %{customdata[1]}<extra></extra>' }], { ...baseLayout, height: 330, yaxis: { ...baseLayout.yaxis, title: 'Pearson r with log hourly wage' } }, { responsive: true, displayModeBar: false });
+document.getElementById('tree-inline-table').innerHTML = '<table><thead><tr><th>Trait</th><th>Pearson r</th><th>p-value</th></tr></thead><tbody>' + STORY_DATA.tree.correlations.map(d => `<tr><td>${d.trait}</td><td>${d.r.toFixed(3)}</td><td>${d.p < .001 ? '&lt; .001' : d.p.toFixed(3)}</td></tr>`).join('') + '</tbody></table>';
+const select = document.getElementById('kaggle-inline-select');
 Object.entries(STORY_DATA.models).forEach(([key, model]) => { const option = document.createElement('option'); option.value = key; option.textContent = model.label; select.appendChild(option); });
 function showModel(key) {
   const model = STORY_DATA.models[key];
-  Plotly.react('kaggle-chart', [{ type: 'bar', x: model.rows.map(d => d.trait), y: model.rows.map(d => d.beta), marker: { color: model.rows.map(d => d.beta >= 0 ? palette.green : palette.coral) }, error_y: { type: 'data', array: model.rows.map(d => 1.96 * d.se), visible: true, color: palette.muted }, customdata: model.rows.map(d => [d.p]), hovertemplate: '<b>%{x}</b><br>Standardized beta: %{y:.3f}<br>p-value: %{customdata[0]:.3g}<extra></extra>' }], { ...baseLayout, yaxis: { ...baseLayout.yaxis, title: 'Standardized coefficient (95% CI)' } }, { responsive: true, displayModeBar: false });
-  document.getElementById('model-n').textContent = model.n.toLocaleString() + ' rows · ' + model.controls_label;
-  document.getElementById('model-table').innerHTML = '<table><thead><tr><th>Trait</th><th>Std. beta</th><th>95% CI</th><th>p-value</th></tr></thead><tbody>' + model.rows.map(d => `<tr><td>${d.trait}</td><td>${d.beta.toFixed(3)}</td><td>${(d.beta-1.96*d.se).toFixed(3)} to ${(d.beta+1.96*d.se).toFixed(3)}</td><td>${d.p < .001 ? '&lt; .001' : d.p.toFixed(3)}</td></tr>`).join('') + '</tbody></table>';
+  Plotly.react('kaggle-inline-chart', [{ type: 'bar', x: model.rows.map(d => d.trait), y: model.rows.map(d => d.beta), marker: { color: model.rows.map(d => d.beta >= 0 ? palette.green : palette.coral) }, error_y: { type: 'data', array: model.rows.map(d => 1.96 * d.se), visible: true, color: palette.muted }, customdata: model.rows.map(d => [d.p]), hovertemplate: '<b>%{x}</b><br>Standardized beta: %{y:.3f}<br>p-value: %{customdata[0]:.3g}<extra></extra>' }], { ...baseLayout, yaxis: { ...baseLayout.yaxis, title: 'Standardized coefficient (95% CI)' } }, { responsive: true, displayModeBar: false });
+  document.getElementById('kaggle-inline-n').textContent = model.n.toLocaleString() + ' rows · ' + model.controls_label;
+  document.getElementById('kaggle-inline-table').innerHTML = '<table><thead><tr><th>Trait</th><th>Std. beta</th><th>95% CI</th><th>p-value</th></tr></thead><tbody>' + model.rows.map(d => `<tr><td>${d.trait}</td><td>${d.beta.toFixed(3)}</td><td>${(d.beta-1.96*d.se).toFixed(3)} to ${(d.beta+1.96*d.se).toFixed(3)}</td><td>${d.p < .001 ? '&lt; .001' : d.p.toFixed(3)}</td></tr>`).join('') + '</tbody></table>';
 }
 select.addEventListener('change', () => showModel(select.value));
 showModel(select.value);

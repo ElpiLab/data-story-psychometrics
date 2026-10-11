@@ -37,6 +37,21 @@ h2 { max-width: 780px; margin: 14px 0 22px; font-size: clamp(38px, 5vw, 62px); l
 .teammate-copy p { max-width: 790px; margin: 0 0 22px; color: var(--ink); font-size: 17px; line-height: 1.8; }
 .teammate-copy h2 { margin: 38px 0 18px; font-size: clamp(30px, 4vw, 48px); }
 .teammate-copy h2:first-child { margin-top: 0; }
+.trait-intro { margin: 42px 0 18px; }
+.trait-intro-copy { margin-top: 10px !important; color: var(--muted) !important; }
+.trait-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 0 0 36px; padding: 0; list-style: none; counter-reset: traits; }
+.trait-card { position: relative; min-height: 210px; padding: 25px 24px 22px 66px; background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--green); }
+.trait-card:nth-child(2n) { border-top-color: var(--coral); }
+.trait-card:nth-child(5) { grid-column: 1 / -1; }
+.trait-card h3 { margin: 0 0 12px; color: var(--green); font-size: 24px; line-height: 1.1; }
+.trait-card p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.7; }
+.trait-number { position: absolute; top: 22px; left: 23px; color: var(--coral); font: 12px "DM Mono", monospace; letter-spacing: .08em; }
+.salary-trait-intro { margin: 42px 0 18px; }
+.salary-trait-list { margin-bottom: 22px; }
+.salary-trait-card { position: relative; padding: 22px 24px 20px 66px; background: #efe9dc; border: 1px solid var(--line); border-left: 4px solid var(--coral); }
+.salary-trait-card:nth-child(2n) { border-left-color: var(--green); }
+.salary-trait-card h3 { margin: 0 0 9px; color: var(--green); font-size: 22px; line-height: 1.1; }
+.salary-trait-card p { margin: 0; color: var(--ink); font-size: 15px; line-height: 1.7; }
 .trait-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 12px; margin-top: 38px; }
 .trait { min-height: 188px; background: var(--white); border: 1px solid var(--line); padding: 20px 17px; }
 .trait b { display: block; margin: 0 0 12px; color: var(--green); font: 12px "DM Mono",monospace; text-transform: uppercase; }
@@ -46,6 +61,16 @@ h2 { max-width: 780px; margin: 14px 0 22px; font-size: clamp(38px, 5vw, 62px); l
 .chart-title h3 { margin: 5px 0; font-size: 24px; }
 .chart-title span, .source-note { color: var(--muted); font: 11px "DM Mono", monospace; }
 .chart { min-height: 350px; width: 100%; }
+.inline-visualization { margin: 34px 0 40px; padding: 24px; background: var(--white); border: 1px solid var(--line); border-left: 4px solid var(--coral); }
+.inline-visualization h3 { margin: 8px 0 8px; font-size: 30px; }
+.visualization-caption { margin-bottom: 0 !important; color: var(--muted) !important; font-size: 15px !important; line-height: 1.65 !important; }
+.inline-chart { min-height: 330px; width: 100%; }
+.dataset-overview { margin: 34px 0 40px; padding: 24px; background: #efe9dc; border: 1px solid var(--line); }
+.dataset-overview h3 { margin: 8px 0; font-size: 30px; }
+.dataset-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 22px 0 4px; }
+.dataset-metrics div { padding: 16px; background: var(--white); border: 1px solid var(--line); }
+.dataset-metrics strong { display: block; color: var(--green); font: 25px "DM Mono", monospace; }
+.dataset-metrics span { display: block; margin-top: 5px; color: var(--muted); font: 11px "DM Mono", monospace; text-transform: uppercase; }
 .note { margin-top: 18px; padding: 18px 22px; border-left: 3px solid var(--coral); background: #efe9dc; color: #43534f; line-height: 1.7; }
 .note strong { color: var(--ink); }
 .stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin: 30px 0; }
@@ -62,7 +87,21 @@ select { min-width: 245px; border: 1px solid var(--line); border-radius: 3px; pa
 .table-wrap td, .table-wrap th { padding: 11px 13px; border-bottom: 1px solid var(--line); }
 .table-wrap td:not(:first-child) { font-family: "DM Mono",monospace; font-size: 12px; }
 .table-wrap tr:last-child td { border-bottom: 0; }
+.article-sources { margin-top: 88px; padding-top: 58px; border-top: 1px solid var(--line); }
+.article-sources h2 { margin-bottom: 14px; }
+.sources-lede { max-width: 650px; color: var(--muted) !important; }
+.source-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 30px; }
+.source-card { padding: 22px; background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--green); }
+.source-card-wide { grid-column: 1 / -1; border-top-color: var(--coral); }
+.source-card-label { color: var(--coral); font: 11px "DM Mono", monospace; letter-spacing: .14em; text-transform: uppercase; }
+.source-card p { margin: 12px 0 14px; color: var(--muted); font-size: 15px; line-height: 1.7; }
+.source-card a, .reading-list a { font: 12px "DM Mono", monospace; }
+.reading-list { margin-top: 30px; padding: 24px; background: #efe9dc; border: 1px solid var(--line); }
+.reading-list ol { margin: 16px 0 0; padding-left: 22px; }
+.reading-list li { margin: 0 0 17px; padding-left: 6px; color: var(--ink); font-size: 14px; line-height: 1.7; }
+.reading-list li:last-child { margin-bottom: 0; }
+.reading-list a { white-space: nowrap; }
 .foot { padding: 60px 0 80px; color: var(--muted); font-size: 13px; line-height: 1.8; }
 .foot h2 { color: var(--ink); font-size: 34px; }
 .foot a { display: block; width: fit-content; }
-@media (max-width: 760px) { .nav { gap: 10px; font-size: 10px; } .brand { font-size: 11px; } .trait-grid { grid-template-columns: repeat(2,1fr); } .trait:last-child { grid-column: span 2; } .hero { min-height: 570px; padding-top: 70px; padding-bottom: 70px; } section { padding: 72px 0; } .stats { grid-template-columns: 1fr; } .chart-card { padding: 10px; } }
+@media (max-width: 760px) { .nav { gap: 10px; font-size: 10px; } .brand { font-size: 11px; } .trait-grid { grid-template-columns: repeat(2,1fr); } .trait:last-child { grid-column: span 2; } .trait-list { grid-template-columns: 1fr; } .trait-card:nth-child(5) { grid-column: auto; } .dataset-metrics { grid-template-columns: 1fr; } .source-grid { grid-template-columns: 1fr; } .source-card-wide { grid-column: auto; } .hero { min-height: 570px; padding-top: 70px; padding-bottom: 70px; } section { padding: 72px 0; } .stats { grid-template-columns: 1fr; } .chart-card { padding: 10px; } }

@@ -10,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = BASE_DIR / "dataset"
 OUTPUT_DIR = BASE_DIR / "output"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-TREE_PATH = DATA_DIR / "TreeData" / "Tree_Data_revision.csv"
+TREE_PATH = DATA_DIR / "TreeData" / "TREE2_Clean_Analysis_Dataset.csv"
 KAGGLE_PATH = DATA_DIR / "Kaggle_BigFive_USA" / "big_five_life_outcomes.csv"
 
 TREE_TRAITS = {
@@ -41,8 +41,21 @@ def _require_columns(df: pd.DataFrame, columns: list[str], label: str) -> None:
 
 
 def load_tree() -> pd.DataFrame:
-    """Load TREE data and ensure monthly and log monthly wages are available."""
+    """Load the cleaned TREE2 export and expose the site's wage aliases.
+
+    The attached analysis export uses hourly-wage names (``stundenlohn`` and
+    ``log_stundenlohn``). The aliases below keep the existing analysis pages
+    compatible while making the unit explicit in the static story.
+    """
     df = _read_csv(TREE_PATH, "TREE")
+    if "wage_hourly" not in df.columns and "stundenlohn" in df.columns:
+        df["wage_hourly"] = pd.to_numeric(df["stundenlohn"], errors="coerce")
+    if "log_hourly_wage" not in df.columns and "log_stundenlohn" in df.columns:
+        df["log_hourly_wage"] = pd.to_numeric(df["log_stundenlohn"], errors="coerce")
+    if "monthly_wage" not in df.columns and "wage_hourly" in df.columns:
+        df["monthly_wage"] = df["wage_hourly"]
+    if "log_monthly_wage" not in df.columns and "log_hourly_wage" in df.columns:
+        df["log_monthly_wage"] = df["log_hourly_wage"]
     if "monthly_wage" not in df.columns and "monthly_salary" in df.columns:
         df["monthly_wage"] = pd.to_numeric(df["monthly_salary"], errors="coerce")
     if "monthly_wage" not in df.columns:
