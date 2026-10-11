@@ -23,7 +23,7 @@ CONTROLS = ["age", "education_years", "parental_ses", "cognitive_score", "gpa", 
 def render_teammate_text():
     """Render the teammate's plain-text article without changing its wording."""
     raw = (ROOT / "Story Intro.txt").read_text(encoding="utf-8")
-    heading_lines = {"Story Intro", "What Is Personality?", "Kaggle Dataset"}
+    heading_lines = {"What Is Personality?", "Kaggle Dataset"}
     trait_names = (
         "Openness to Experience",
         "Conscientiousness",
@@ -76,6 +76,10 @@ def render_teammate_text():
                 '<p class="visualization-caption">Each bar shows the Pearson correlation between one Big Five trait and log hourly wage. Values close to zero indicate little direct association in this sample.</p>'
                 '<div id="tree-inline-chart" class="inline-chart" role="img" aria-label="TREE dataset visualization of personality correlations with log hourly wage"></div>'
                 '<div id="tree-inline-table" class="table-wrap"></div>'
+                '<div class="methods-note"><div class="source-card-label">How to read the results</div>'
+                '<ul><li><strong>r (correlation):</strong> measures the direction and strength of a linear relationship. Values near 0 indicate little linear association; they do not prove that no relationship exists.</li>'
+                '<li><strong>95% confidence interval (CI/KI):</strong> shows a range of plausible values for the estimated correlation. Intervals that include 0 are compatible with no direct linear association.</li>'
+                '<li><strong>p-value:</strong> indicates how unusual the observed result would be if the true correlation were 0. A large p-value is not proof that the traits have no effect.</li></ul></div>'
                 '</div>'
             )
             index += 2
@@ -105,6 +109,9 @@ def render_teammate_text():
                 '<div class="control-row"><label for="kaggle-inline-select">Controls</label><select id="kaggle-inline-select" aria-label="Select synthetic regression controls"></select><span id="kaggle-inline-n" class="source-note"></span></div>'
                 '<div class="chart-title"><h3>What changes when we add GPA and cognitive scores?</h3><span>SYNTHETIC DATA · STANDARDIZED OLS</span></div>'
                 '<p class="visualization-caption">The coefficients show how the estimated relationship between each personality trait and log income changes as background, education, cognitive ability, grades, and job performance are added.</p>'
+                '<div class="dataset-explainer"><div class="source-card-label">How this dataset differs from TREE</div>'
+                '<p>The TREE data is a real Swiss longitudinal study focused on people near career entry, with observed employment episodes and hourly wages. The Kaggle file is a synthetic comparison dataset: its 50,000 rows are generated or assembled for illustration and should not be treated as evidence about a real population. It includes income together with personality, education, age, parental socioeconomic status, cognitive score, GPA, job performance, and sex, which lets us demonstrate how estimated personality-income relationships can change when additional variables are included.</p>'
+                '<p class="dataset-warning"><strong>Important:</strong> this comparison illustrates a modeling idea; it does not establish causal effects or replace analysis of real salary data.</p></div>'
                 '<div id="kaggle-inline-chart" class="chart" role="img" aria-label="Synthetic Kaggle regression coefficients with selectable controls"></div>'
                 '<div id="kaggle-inline-table" class="table-wrap"></div>'
                 '</div>'
@@ -115,6 +122,9 @@ def render_teammate_text():
             index += 1
             continue
         if block == "Tree Dataset":
+            index += 1
+            continue
+        if block == "Story Intro":
             index += 1
             continue
         if block.startswith("Special thanks to the university of Bern"):

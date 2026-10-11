@@ -64,6 +64,11 @@ h2 { max-width: 780px; margin: 14px 0 22px; font-size: clamp(38px, 5vw, 62px); l
 .inline-visualization { margin: 34px 0 40px; padding: 24px; background: var(--white); border: 1px solid var(--line); border-left: 4px solid var(--coral); }
 .inline-visualization h3 { margin: 8px 0 8px; font-size: 30px; }
 .visualization-caption { margin-bottom: 0 !important; color: var(--muted) !important; font-size: 15px !important; line-height: 1.65 !important; }
+.methods-note { margin-top: 24px; padding: 20px 22px; background: #efe9dc; border: 1px solid var(--line); }
+.methods-note ul { margin: 13px 0 0; padding-left: 22px; }
+.methods-note li { margin-bottom: 10px; color: var(--muted); font-size: 14px; line-height: 1.65; }
+.methods-note li:last-child { margin-bottom: 0; }
+.methods-note strong { color: var(--ink); }
 .inline-chart { min-height: 330px; width: 100%; }
 .dataset-overview { margin: 34px 0 40px; padding: 24px; background: #efe9dc; border: 1px solid var(--line); }
 .dataset-overview h3 { margin: 8px 0; font-size: 30px; }
@@ -79,6 +84,11 @@ h2 { max-width: 780px; margin: 14px 0 22px; font-size: clamp(38px, 5vw, 62px); l
 .stat .label { margin-top: 7px; color: #d6e2d9; font-size: 12px; }
 .control-row { display: flex; flex-wrap: wrap; align-items: center; gap: 13px; padding: 15px 10px; }
 .control-row label { color: var(--muted); font: 11px "DM Mono",monospace; text-transform: uppercase; }
+.dataset-explainer { margin: 18px 10px 4px; padding: 20px 22px; background: #efe9dc; border: 1px solid var(--line); border-left: 4px solid var(--green); }
+.dataset-explainer p { margin: 10px 0 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
+.dataset-explainer p + p { margin-top: 12px; }
+.dataset-warning { padding-top: 12px; border-top: 1px solid var(--line); }
+.dataset-warning strong { color: var(--ink); }
 select { min-width: 245px; border: 1px solid var(--line); border-radius: 3px; padding: 11px 13px; color: var(--ink); background: var(--paper); font: 13px "DM Sans",sans-serif; }
 .dataset-pill { display: inline-flex; padding: 7px 10px; border-radius: 20px; color: #5c491a; background: var(--lime); font: 10px "DM Mono",monospace; letter-spacing: .08em; text-transform: uppercase; }
 .table-wrap { overflow-x: auto; }
