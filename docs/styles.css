@@ -115,3 +115,53 @@ select { min-width: 245px; border: 1px solid var(--line); border-radius: 3px; pa
 .foot h2 { color: var(--ink); font-size: 34px; }
 .foot a { display: block; width: fit-content; }
 @media (max-width: 760px) { .nav { gap: 10px; font-size: 10px; } .brand { font-size: 11px; } .trait-grid { grid-template-columns: repeat(2,1fr); } .trait:last-child { grid-column: span 2; } .trait-list { grid-template-columns: 1fr; } .trait-card:nth-child(5) { grid-column: auto; } .dataset-metrics { grid-template-columns: 1fr; } .source-grid { grid-template-columns: 1fr; } .source-card-wide { grid-column: auto; } .hero { min-height: 570px; padding-top: 70px; padding-bottom: 70px; } section { padding: 72px 0; } .stats { grid-template-columns: 1fr; } .chart-card { padding: 10px; } }
+
+/* FHNW styleguide alignment */
+:root {
+  --paper: #f7f7f5;
+  --ink: #111111;
+  --muted: #4d4d4d;
+  --line: #d7d7d2;
+  --green: #111111;
+  --lime: #fde703;
+  --coral: #111111;
+  --white: #ffffff;
+}
+body { background: var(--paper); color: var(--ink); font-family: Inter, Arial, sans-serif; }
+a { color: var(--ink); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.topbar { padding-top: 14px; padding-bottom: 14px; background: rgba(247,247,245,.96); border-bottom: 2px solid var(--ink); }
+.brand, .nav, .eyebrow, .section-tag, .source-note, .chart-title span, .control-row label, .trait-number, .source-card-label { font-family: Inter, Arial, sans-serif; font-weight: 700; letter-spacing: .08em; }
+.brand { letter-spacing: .02em; }
+.nav a { color: var(--ink); }
+.nav a:hover { color: var(--ink); background: var(--lime); }
+.hero { min-height: 600px; color: var(--ink); background: var(--lime); padding-top: 82px; padding-bottom: 82px; }
+.hero::after { color: rgba(17,17,17,.08); font-family: Inter, Arial, sans-serif; font-weight: 900; }
+.eyebrow, .section-tag { color: var(--ink); }
+h1, h2, h3 { font-family: Inter, Arial, sans-serif; font-weight: 800; letter-spacing: -.035em; }
+h1 { font-size: clamp(48px, 8vw, 100px); line-height: .95; }
+.hero .prompt { color: var(--ink); font-family: Inter, Arial, sans-serif; font-weight: 700; }
+.hero-link { padding: 13px 20px; color: var(--white); background: var(--ink); border: 2px solid var(--ink); border-radius: 0; font-family: Inter, Arial, sans-serif; font-weight: 700; }
+.hero-link:hover { color: var(--ink); background: transparent; }
+section { border-bottom: 2px solid var(--ink); }
+.teammate-copy p { font-size: 17px; line-height: 1.75; }
+.trait-card, .salary-trait-card, .source-card, .dataset-metrics div, .chart-card, .inline-visualization, .dataset-overview, .reading-list { border-color: var(--ink); border-radius: 0; box-shadow: 4px 4px 0 var(--ink); }
+.trait-card { border-top: 8px solid var(--ink); }
+.trait-card:nth-child(2n), .source-card-wide { border-top-color: var(--lime); }
+.trait-card h3, .salary-trait-card h3 { color: var(--ink); }
+.salary-trait-card { border-left: 8px solid var(--lime); background: var(--white); }
+.salary-trait-card:nth-child(2n) { border-left-color: var(--ink); }
+.trait-number, .source-card-label { color: var(--ink); }
+.inline-visualization { border-left: 8px solid var(--lime); }
+.dataset-overview, .methods-note, .dataset-explainer, .reading-list { background: var(--lime); border-color: var(--ink); }
+.dataset-metrics strong { color: var(--ink); }
+.stat { background: var(--ink); }
+.stat .number { color: var(--lime); }
+.chart-card { background: var(--white); }
+select { border: 2px solid var(--ink); border-radius: 0; background: var(--white); font-family: Inter, Arial, sans-serif; }
+select:focus { outline: 3px solid var(--lime); outline-offset: 2px; }
+.table-wrap th { color: var(--ink); }
+.table-wrap td, .table-wrap th { border-bottom-color: var(--ink); }
+.foot { border-top: 2px solid var(--ink); }
+.narrative-kaggle .control-row { position: sticky; top: 58px; z-index: 10; margin: 0 -20px 24px; padding: 18px 20px 14px; background: rgba(255,255,255,.97); border-bottom: 2px solid var(--ink); }
+.narrative-kaggle .control-row select { flex: 1 1 245px; max-width: 490px; }
+@media (max-width: 760px) { .hero { min-height: 520px; } .trait-card, .salary-trait-card, .source-card, .dataset-metrics div, .chart-card, .inline-visualization, .dataset-overview, .reading-list { box-shadow: 3px 3px 0 var(--ink); } }
