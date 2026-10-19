@@ -131,7 +131,8 @@ body { background: var(--paper); color: var(--ink); font-family: Inter, Arial, s
 a { color: var(--ink); text-decoration-thickness: 2px; text-underline-offset: 3px; }
 .topbar { padding-top: 14px; padding-bottom: 14px; background: rgba(247,247,245,.96); border-bottom: 2px solid var(--ink); }
 .brand, .nav, .eyebrow, .section-tag, .source-note, .chart-title span, .control-row label, .trait-number, .source-card-label { font-family: Inter, Arial, sans-serif; font-weight: 700; letter-spacing: .08em; }
-.brand { letter-spacing: .02em; }
+.brand { display: inline-flex; align-items: center; gap: 12px; letter-spacing: .02em; }
+.brand img { display: block; width: 36px; height: 36px; object-fit: contain; }
 .nav a { color: var(--ink); }
 .nav a:hover { color: var(--ink); background: var(--lime); }
 .hero { min-height: 600px; color: var(--ink); background: var(--lime); padding-top: 82px; padding-bottom: 82px; }
@@ -164,4 +165,4 @@ select:focus { outline: 3px solid var(--lime); outline-offset: 2px; }
 .foot { border-top: 2px solid var(--ink); }
 .narrative-kaggle .control-row { position: sticky; top: 58px; z-index: 10; margin: 0 -20px 24px; padding: 18px 20px 14px; background: rgba(255,255,255,.97); border-bottom: 2px solid var(--ink); }
 .narrative-kaggle .control-row select { flex: 1 1 245px; max-width: 490px; }
-@media (max-width: 760px) { .hero { min-height: 520px; } .trait-card, .salary-trait-card, .source-card, .dataset-metrics div, .chart-card, .inline-visualization, .dataset-overview, .reading-list { box-shadow: 3px 3px 0 var(--ink); } }
+@media (max-width: 760px) { .hero { min-height: 520px; } .brand { gap: 8px; } .brand img { width: 30px; height: 30px; } .trait-card, .salary-trait-card, .source-card, .dataset-metrics div, .chart-card, .inline-visualization, .dataset-overview, .reading-list { box-shadow: 3px 3px 0 var(--ink); } }
