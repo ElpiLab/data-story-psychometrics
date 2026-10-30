@@ -1,4 +1,4 @@
-.PHONY: install analyze app test site-data site-preview site
+.PHONY: install analyze app test site-preview
 
 install:
 	python -m pip install -r requirements.txt
@@ -17,11 +17,5 @@ app:
 test:
 	python -m pytest
 
-site-data:
-	python site/build_data.py
-
-site-preview: site-data
+site-preview:
 	@echo Open docs/index.html in a browser for the local preview.
-
-site: site-data
-	quarto render site

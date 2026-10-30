@@ -223,4 +223,3 @@ output/
 __pycache__/
 .venv/
 .DS_Store
-.quarto/
